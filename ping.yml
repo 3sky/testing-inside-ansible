@@ -1,6 +1,6 @@
 ---
 - name: Testing being inside and vault
-  hosts: all
+  hosts: dev
   become: false
   gather_facts: false
   vars_files:
