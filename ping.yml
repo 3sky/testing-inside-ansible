@@ -3,6 +3,8 @@
   hosts: all
   become: false
   gather_facts: false
+  vars_files:
+    - test.yaml
 
   tasks:
 
