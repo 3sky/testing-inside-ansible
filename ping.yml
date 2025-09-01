@@ -1,0 +1,14 @@
+---
+- name: Testing being inside and vault
+  hosts: all
+  become: false
+  gather_facts: false
+
+  tasks:
+    - name: Test ansible
+      ansible.buildin.command: env
+      register: _env
+
+    - name: Debug
+      debug:
+        var: _env
