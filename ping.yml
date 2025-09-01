@@ -5,10 +5,12 @@
   gather_facts: false
 
   tasks:
+
     - name: Test ansible
-      ansible.buildin.command: env
+      ansible.builtin.command:
+        cmd: env
       register: _env
 
     - name: Debug
-      debug:
+      ansible.builtin.debug:
         var: _env
