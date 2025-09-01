@@ -14,3 +14,7 @@
     - name: Debug
       ansible.builtin.debug:
         var: _env
+
+    - name: Debug secrets
+      ansible.builtin.debug:
+        var: password
