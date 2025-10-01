@@ -1,17 +1,15 @@
 ---
 - name: Testing being inside and vault
-  hosts: dev
+  hosts: all
   become: false
   gather_facts: false
-  vars_files:
-    - test.yml
 
   tasks:
 
     - name: Test ansible
+      register: _env
       ansible.builtin.command:
         cmd: env
-      register: _env
 
     - name: Debug
       ansible.builtin.debug:
@@ -19,4 +17,5 @@
 
     - name: Debug secrets
       ansible.builtin.debug:
-        var: password
+        var: name
+
