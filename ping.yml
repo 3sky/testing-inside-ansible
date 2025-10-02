@@ -7,15 +7,22 @@
   tasks:
 
     - name: Test ansible
+      tags:
+        - always
       register: _env
       ansible.builtin.command:
         cmd: env
 
     - name: Debug
+      tags:
+        - debug
+        - never
       ansible.builtin.debug:
         var: _env
 
     - name: Debug secrets
+      tags:
+        - always
       ansible.builtin.debug:
         var: name
 
